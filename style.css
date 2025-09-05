@@ -18,11 +18,11 @@ body{
 }
 
 #bloque {
-    position: relative;
+    position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    width: min(calc(90% - 2rem), 500px);
+    width: min(calc(75% - 2rem), 500px);
     height:auto;
     padding: 1rem;
     margin: 2rem auto;
