@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Oswald:wght@200..700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --mostrando: orange;
+  --esperando: midnightblue;
+  --flotando: orange;
+}
+
+body{
+  background: midnightblue;
+  color: midnightblue;
+  font-family: Garamond, Georgia serif, serif; 
+}
+
+#bloque {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: min(calc(90% - 2rem), 500px);
+    height:auto;
+    padding: 1rem;
+    margin: auto;
+    background: white;
+    border-radius: .5rem;
+    z-index: 9999;
+}
+
+p{
+  padding:0.5rem 0;
+}
+
+nav{
+  margin:1rem 0;  
+}
+
+nav a{
+  line-height: 1;
+  text-decoration: none;
+  color:white;
+  margin:0 1rem 0 0;
+  padding:0.3rem 1rem;
+  background:var(--esperando);
+  border-radius: .6rem;
+  transition:all ease .75s;
+}
+
+nav a:hover{
+  color:midnightblue;
+  background:var(--flotando);  
+  transition:all ease .75s;
+}
+
+nav a.active{
+  color:midnightblue;
+  background:var(--mostrando);
+}
+
+h1{
+  font-family:"Oswald", sans-serif;
+  color: orange;
+  font-style: normal;
+  line-height: 2;
+  font-size: calc(2rem + 2vw); 
+
+  }
+
+h2{
+  font-family:"Inconsolata", serif;
+  color: midnightblue;
+  font-style: italic;
+  line-height: 2;
+  font-size: calc(1rem + 1vw); 
+}
+
