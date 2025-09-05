@@ -12,36 +12,50 @@
             <!--editar lo que sigue-->
             <img src="taube.jpg" alt="Paloma">
             <h1>¡Hola mundo!</h1>
-            <h2>Me llamo <a href="https://github.com/deleteandescape" target="_blank">delete and escape</a></h2>
+            <h2>Me llamo <a href="#" target="_blank"><a href="https://github.com/deleteandescape" target="_blank">delete and escape</a></h2>
             <p>Soy estudiante de comunicación visual y ahora para un semestre en Chile 👽</p>
             <!--no sigas editando desde acá-->
             <p>Esta es mi primera prueba de <a href="https://github.com/profesorfaco/opr" target="_blank">Introducción al Desarrollo Web desde el Diseño</a>, un Optativo de Profundización de la <a href="https://diseno.uc.cl/" target="_blank">Escuela de Diseño UC</a>.</p>
             <p>Aquí puedes echarle un vistazo a las páginas que preparé usando <code>HTML</code>, <code>CSS</code> y <code>p5.js</code>, una bibliteca de <code>JavaScript</code>:</p>
             <nav>
-                <a href="index.html" class="active">Portada</a> 
-                <a href="page-1.html">Primera interior</a> 
+                <a href="index.html">Portada</a> 
+                <a href="page-1.html" class="active">Primera interior</a> 
                 <a href="page-2.html">Segunda interior</a>
             </nav>
-            <p>En la portada puedes ver un <code>circle</code>, con un radio definido al azar en cada iteración del <code>draw()</code>, que va marcando una huella del movimiento del mouse</p>
+
+            <p>En la primera página interior puedes ver un emoji siguiendo al mouse, con algo de demora por un <code>lerp()</code>, pero sin dejar huella. Al mismo tiempo, el matiz de fondo cambia según la posición del mouse en la horizontal, al tiempo que la saturación cambia por la posición del mouse en la vertical.</p>
         </main>
 
         <script>
-var d;
-var canvas; 
+        var canvas;
+        var x = 0;
+        var y = 0;
 
-function setup() {
-  createCanvas(500,300);
-background(100,100,235);
+        function setup() {
+          canvas = createCanvas(windowWidth, windowHeight);
+          canvas.parent("cuerpo");
+          canvas.position(0,0);
+          canvas.style('z-index','-1');
+          noStroke();
+          frameRate(25);
+        }
 
+       
+            function draw() {
+   colorMode(HSB, 360, 100, 100, 100);
+
+  let s = map(mouseY, 0, windowHeight, 0, 100);
+  background(map(mouseX, 0, windowWidth, 0, 359), s, 100);
+ x = lerp(x, mouseX, 0.2);
+ y = lerp(y, mouseY, 0.2)
+ fill("white");
+ textSize(25);
+ text("👽",x,y); 
 }
 
-function draw() {
-  d = random (10,100);
-  noStroke()
-  fill(250,d)
-ellipse(mouseX, mouseY,d,d);
-}
-
+        function windowResized() {
+          resizeCanvas(windowWidth, windowHeight);
+        }
         </script>
     </body>
 </html>
