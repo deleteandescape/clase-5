@@ -25,9 +25,9 @@ body{
     width: min(calc(90% - 2rem), 500px);
     height:auto;
     padding: 1rem;
-    margin: 2rem auto;
+    margin: auto;
     background: white;
-    border-radius: 1rem;
+    border-radius: .10rem;
     z-index: 9999;
 }
 
